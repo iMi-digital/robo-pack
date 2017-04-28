@@ -1,0 +1,21 @@
+{
+    "name": "imi/robo-imi-pack",
+    "description": "iMi Package Tasks for Robo task runner",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "iMi digital GmbH",
+            "email": "a.menk@imi.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "iMi\\RoboPack\\" : "src",
+            "iMi\\RoboPack\\Test\\" : "test"
+        }
+    },
+    "require": {
+        "consolidation/robo": "^1.0.0",
+        "nordcode/robo-parameters": "^1.1"
+    }
+}
