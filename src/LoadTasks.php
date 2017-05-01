@@ -5,6 +5,8 @@ namespace iMi\RoboProjectSetup;
 trait LoadTasks {
 	// 3rd party tasks
 	use \NordCode\RoboParameters\loadTasks;
+	use \iMi\RoboMagerun\Task\Magerun\loadTasks;
+	use \iMi\RoboMagerun\Task\Magerun\loadShortcuts;
 
 	protected function getBaseUrlSuggestion()
 	{
