@@ -5,6 +5,8 @@ namespace iMi\RoboPack;
 trait LoadTasks {
 	// 3rd party tasks
 	use \NordCode\RoboParameters\loadTasks;
+	use \iMi\RoboMagerun\loadTasks;
+	use \iMi\RoboMagerun\loadShortcuts;
 
 	/**
 	 * Heuristic to suggest a base URL
