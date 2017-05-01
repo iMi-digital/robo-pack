@@ -9,8 +9,8 @@ trait LoadTasks {
 	use \iMi\RoboRun\Task\Magerun\loadShortcuts;
 	use \iMi\RoboRun\Task\Conrun\loadTasks;
 	use \iMi\RoboRun\Task\Conrun\loadShortcuts;
-	use \iMi\RoboWpCli\Task\Wpcli\loadTasks;
-	use \iMi\RoboWpCli\Task\Wpcli\loadShortcuts;
+	use \iMi\RoboWpcli\Task\Wpcli\loadTasks;
+	use \iMi\RoboWpcli\Task\Wpcli\loadShortcuts;
 
 	/**
 	 * Heuristic to suggest a base URL
