@@ -2,6 +2,8 @@
 
 namespace iMi\RoboPack;
 
+use ReflectionClass;
+
 trait LoadTasks {
 	// 3rd party tasks
 	use \NordCode\RoboParameters\loadTasks;
@@ -11,6 +13,20 @@ trait LoadTasks {
 	use \iMi\RoboRun\Task\Conrun\loadShortcuts;
 	use \iMi\RoboWpcli\Task\Wpcli\loadTasks;
 	use \iMi\RoboWpcli\Task\Wpcli\loadShortcuts;
+
+	/**
+	 * Heuristic: Project is in a folder named after the project's live domain
+	 *
+	 * Detect the RoboFiles dir.
+	 *
+	 * @return string
+	 */
+	protected function suggestProjectName()
+	{
+		$reflection = new ReflectionClass('RoboFile');
+		$classFileName = $reflection->getFileName();
+		return basename(dirname($classFileName));
+	}
 
 	/**
 	 * Heuristic to suggest a base URL
@@ -31,7 +47,7 @@ trait LoadTasks {
 		if (strpos($hostname, '.') === false) {
 			$hostname .= '.imi.local';
 		}
-		return 'http://' . basename(__DIR__) . '.' . $hostname . '/';
+		return 'http://' . $this->suggestProjectName() . '.' . $hostname . '/';
 	}
 
 	/**
@@ -68,7 +84,7 @@ trait LoadTasks {
 	 */
 	protected function suggestDbName()
 	{
-		return preg_replace('/[^A-Za-z0-9]/', '_', basename(__DIR__));
+		return preg_replace('/[^A-Za-z0-9]/', '_', $this->suggestProjectName());
 	}
 
 	protected function askSetup()
