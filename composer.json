@@ -17,7 +17,7 @@
     "require": {
         "consolidation/robo": "^1.0.0",
         "nordcode/robo-parameters": "^1.1",
-        "imi/robo-run": "^1.0.0",
+        "imi/robo-run": "^1.1.0",
         "imi/robo-wpcli": "^0.1.1"
     }
 }

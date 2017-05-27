@@ -9,6 +9,8 @@ trait LoadTasks {
 	use \NordCode\RoboParameters\loadTasks;
 	use \iMi\RoboRun\Task\Magerun\loadTasks;
 	use \iMi\RoboRun\Task\Magerun\loadShortcuts;
+	use \iMi\RoboRun\Task\MagerunTwo\loadTasks;
+	use \iMi\RoboRun\Task\MagerunTwo\loadShortcuts;
 	use \iMi\RoboRun\Task\Conrun\loadTasks;
 	use \iMi\RoboRun\Task\Conrun\loadShortcuts;
 	use \iMi\RoboWpcli\Task\Wpcli\loadTasks;
