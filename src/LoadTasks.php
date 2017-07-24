@@ -62,7 +62,12 @@ trait LoadTasks {
 	 */
 	protected function suggestMySqlConnection()
 	{
-		$contents = file_get_contents(getenv('HOME') . DIRECTORY_SEPARATOR . '.my.cnf');
+		$myCnf = getenv('HOME') . DIRECTORY_SEPARATOR . '.my.cnf';
+		if (file_exists($myCnf)) {
+			$contents = @file_get_contents($myCnf);
+		} else {
+			$contents = '';
+		}
 		if (preg_match('/user=(.*)/', $contents, $matches)) {
 			$user = $matches[1];
 		} else {
@@ -89,6 +94,16 @@ trait LoadTasks {
 		return preg_replace('/[^A-Za-z0-9]/', '_', $this->suggestProjectName());
 	}
 
+	/**
+	 * Ask for base URL
+	 *
+	 * @return string
+	 */
+	protected function askBaseUrl()
+	{
+		return $this->askDefault('BASE URL', $this->suggestBaseUrl());
+	}
+
 	protected function askSetup()
 	{
 		$this->say('Welcome to your friendly project setup!');
@@ -101,7 +116,7 @@ trait LoadTasks {
 		$dbHost = $this->askDefault('DB Host', 'localhost');
 		$dbUser = $this->askDefault('DB User', $dbConfig['user']);
 		$dbPassword = $this->askDefault('DB Password',  $dbConfig['password']);
-		$baseUrl = $this->askDefault('BASE URL', $this->suggestBaseUrl());
+		$baseUrl = $this->askBaseUrl();
 
 		return compact('dbName', 'dbHost', 'dbUser', 'dbPassword', 'baseUrl');
 	}
