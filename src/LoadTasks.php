@@ -15,6 +15,8 @@ trait LoadTasks {
 	use \iMi\RoboRun\Task\Conrun\loadShortcuts;
 	use \iMi\RoboWpcli\Task\Wpcli\loadTasks;
 	use \iMi\RoboWpcli\Task\Wpcli\loadShortcuts;
+	use \iMi\RoboTypo3\Task\Typo3\loadTasks;
+	use \iMi\RoboTypo3\Task\Typo3\loadShortcuts;
 
 	/**
 	 * Heuristic: Project is in a folder named after the project's live domain
