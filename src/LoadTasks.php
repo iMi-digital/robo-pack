@@ -17,6 +17,9 @@ trait LoadTasks {
 	use \iMi\RoboWpcli\Task\Wpcli\loadShortcuts;
 	use \iMi\RoboTypo3\Task\Typo3\loadTasks;
 	use \iMi\RoboTypo3\Task\Typo3\loadShortcuts;
+	use \iMi\RoboLaravel\Task\Artisan\loadTasks;
+	use \iMi\RoboLaravel\Task\Artisan\loadShortcuts;
+
 
 	/**
 	 * Heuristic: Project is in a folder named after the project's live domain
