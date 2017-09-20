@@ -1,5 +1,9 @@
-Robo Utils from and for iMi
-===========================
+Robo Utils Pack by iMi
+======================
+
+We use this pack internally to unify the setup of our projects.
+
+Robo-pack is included the .phar of [iRobo](https://github.com/iMi-digital/iRobo)
 
 Included Tasks
 --------------
