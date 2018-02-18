@@ -20,6 +20,7 @@
         "imi/robo-run": "^2.0.0",
         "imi/robo-wpcli": "^0.2.0",
         "imi/robo-typo3": "^1.0.0",
-        "imi/robo-laravel": "^1.0.0"
+        "imi/robo-laravel": "^1.0.0",
+	"imi/robo-database": "^0.1.0"
     }
 }
