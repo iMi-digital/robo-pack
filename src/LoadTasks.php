@@ -2,6 +2,7 @@
 
 namespace iMi\RoboPack;
 
+use NordCode\RoboParameters\Reader\DotenvReader;
 use ReflectionClass;
 
 trait LoadTasks {
@@ -126,4 +127,13 @@ trait LoadTasks {
 		return compact('dbName', 'dbHost', 'dbUser', 'dbPassword', 'baseUrl');
 	}
 
+
+    /**
+     * @param string $path
+     * @return array
+     */
+    protected function readDotenv($path = './.env'){
+        $dotEnvReader = new DotenvReader();
+        return $dotEnvReader->readFromFile($path);
+    }
 }
